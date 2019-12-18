@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgb(42, 62, 63)
+}
+
+nav li {
+    list-style: none;
+    display: inline;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: whitesmoke;
+    font-size: 2rem;
+    text-align: right;
+}
+
+nav ul {
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav li:first-child {
+    margin-right: 5rem;
+    text-align: left;
+}
+
+nav img {
+    width: 60px;
+}
+
+nav {
+    background-image: linear-gradient(to right,rgba(45, 61, 133, 0.513),rgb(32, 91, 139), rgb(18, 115, 172), rgb(28, 186, 214));
+}
+
+article {
+    background: rgb(235, 239, 240);
+    border-radius: 10px;
+    width: 80%;
+    height: 500px;
+    margin: auto;
+    padding: 50px;
+    border: 1px solid black;
+    margin-top: 50px;
+}
+
+canvas {
+    height: 200px;
+}
