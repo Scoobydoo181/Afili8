@@ -4,14 +4,18 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon -r esm server.js"
+    "start": "nodemon -r esm server.js",
+    "test": "jest --detectOpenHandles"
   },
   "author": "Christopher Wilson",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.0",
     "chart.js": "^2.9.3",
     "esm": "^3.2.25",
     "express": "^4.17.1",
+    "jest": "^24.9.0",
+    "mongodb": "^3.4.1",
     "nodemon": "^2.0.2",
     "vash": "^0.12.9"
   }

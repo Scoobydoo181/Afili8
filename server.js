@@ -1,48 +1,26 @@
 import express from 'express'
 import path from 'path'
 
+import apiRouter from './modules/apiRouter'
+import frontendRouter from './modules/frontendRouter'
+
+//Express config
 const app = express()
 app.set('view engine', 'vash')
+app.use(express.json())
+app.use(express.urlencoded())
 
 //Dashboard site
+app.use(frontendRouter)
+
 app.use(express.static('public'))
-app.use(express.static('node_modules/chart.js/dist'))
-
-app.get('/', (req, res) => {
-    const data = {message: 'Test Test Test'}
-    res.render('home', data)
-})
-
-app.get('/sign-up', (req, res) => {
-    
-})
-
-app.get('/sign-in', (req, res) => {
-    
-})
-
-app.get('/dashboard', (req, res) => {
-    const data = {data: [65, 21, 38, 75, 42, 51]}
-    res.render('dashboard', data)
-})
+app.use(express.static(path.join('node_modules', 'chart.js', 'dist')))
 
 //API Endpoints
-app.post("/api/create", (req, res) => {
-    //Create new afilliate link
-    const data = {text: req.body.message}
-    console.log(data)
-});
+app.use(apiRouter)
 
-app.post("/api/confirm", (req, res) => {
-    //Used after successful payment to attribute a sale to an affiliate
-
-});
-
-app.get("/api/redirect", (req, res) => {
-    //Used by affiliate link itself to  redirect to the company page with data identifying which link was used
-
-});
-
-app.listen(3000, () => {
-    console.log("Node server is running on port 3000")
+//Start server
+const port = 3001
+app.listen(port, () => {
+    console.log(`Node server running on port ${port}`)
 })

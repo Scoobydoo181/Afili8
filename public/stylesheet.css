@@ -1,4 +1,5 @@
 * {
+    font-family: Raleway, Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -10,7 +11,6 @@ body {
 nav li {
     list-style: none;
     display: inline;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: whitesmoke;
     font-size: 2rem;
     text-align: right;
@@ -50,4 +50,19 @@ article {
 
 canvas {
     height: 200px;
+}
+
+header
+{
+    background-image: url(codingBackground.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%, auto;
+    height: 400px;
+    padding: 5% 1% 5% 5%;
+}
+
+header h1 {
+    color: rgb(192, 199, 113);
+    font-size: 400%;
+    text-align: right;
 }
