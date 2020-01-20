@@ -1,7 +1,7 @@
 # Afili8
 
 ## Description
-A SaaS API for afiliate marketing
+A SaaS API for afiliate marketing. Users register, then on their site, whenever they recieve a request to a path that corresponds to a referral code, they redirect to their sale page anduse the verify functionality to check if it's a valid referral code, then they use the increment functionality to assign the completed sale to the referral code owner.
 
 ## API Usage
 Endpoint | Paramaters | Description
@@ -15,23 +15,23 @@ Endpoint | Paramaters | Description
 ## Database structure
 afili8
 |-clients
-|-clientToken1
-    |-{affiliateCode: CODE, numberUses: N}
-    |-{affiliateCode: CODE, numberUses: N}
-    |-{affiliateCode: CODE, numberUses: N}
-|-clientToken2
-    |-{affiliateCode: CODE, numberUses: N}
-    |-{affiliateCode: CODE, numberUses: N}
-    |-{affiliateCode: CODE, numberUses: N}
-|-clientToken3
-    |-{affiliateCode: CODE, numberUses: N}
-    |-{affiliateCode: CODE, numberUses: N}
-    |-{affiliateCode: CODE, numberUses: N}
-...
-|-clientTokenN
-    |-{affiliateCode: CODE, numberUses: N}
-    |-{affiliateCode: CODE, numberUses: N}
-    |-{affiliateCode: CODE, numberUses: N}
+    |-clientToken1
+        |-{affiliateCode: CODE, numberUses: N}
+        |-{affiliateCode: CODE, numberUses: N}
+        |-{affiliateCode: CODE, numberUses: N}
+    |-clientToken2
+        |-{affiliateCode: CODE, numberUses: N}
+        |-{affiliateCode: CODE, numberUses: N}
+        |-{affiliateCode: CODE, numberUses: N}
+    |-clientToken3
+        |-{affiliateCode: CODE, numberUses: N}
+        |-{affiliateCode: CODE, numberUses: N}
+        |-{affiliateCode: CODE, numberUses: N}
+    ...
+    |-clientTokenN
+        |-{affiliateCode: CODE, numberUses: N}
+        |-{affiliateCode: CODE, numberUses: N}
+        |-{affiliateCode: CODE, numberUses: N}
 
 
 
