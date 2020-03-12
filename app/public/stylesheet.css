@@ -78,6 +78,10 @@ nav {
     #toggle {
         display: inline;
     }
+
+    header h1 {
+        font-size: 50%;
+    }
 }
 
 .collapsable {

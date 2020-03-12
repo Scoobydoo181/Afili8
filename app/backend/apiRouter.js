@@ -5,7 +5,7 @@ import axios from 'axios'
 import {handleRequest, getDB, hash} from "./serverUtils.js";
 
 //MongoDB config
-const url = "mongodb://localhost:27017";
+const url = process.env.mongoUrl;
 const dbName = "afili8";
 const client = new MongoClient(url, {useUnifiedTopology:true});
 

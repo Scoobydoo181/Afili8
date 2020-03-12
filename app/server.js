@@ -1,12 +1,10 @@
 import express from 'express'
 import path from 'path'
 import session from "express-session";
-import dotenv from 'dotenv'
 
 import apiRouter from './backend/apiRouter.js'
 import frontendRouter from './backend/frontendRouter.js'
 
-dotenv.config()
 
 //Express config
 const app = express()
@@ -23,9 +21,6 @@ app.use(express.static(path.join('node_modules', 'chart.js', 'dist')))
 //API Endpoints
 app.use(apiRouter)
 
-app.get('/api/:id', (req, res) => {
-    res.send(req.params.id)
-})
 
 //Start server
 app.listen(process.env.port, () => {

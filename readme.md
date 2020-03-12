@@ -16,6 +16,7 @@ Endpoint | Paramaters | Description
 ```afili8
     |-clients
         |-clientToken1
+            |-{firstName: FIRST, lastName: LAST, email: EMAIL, password: PASSWORDHASH}
             |-transactions
                 |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
                 |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
@@ -26,6 +27,7 @@ Endpoint | Paramaters | Description
             |-{affiliateCode: CODE, numberUses: N}
             ...
         |-clientToken2
+            |-{firstName: FIRST, lastName: LAST, email: EMAIL, password: PASSWORDHASH}
             |-transactions
                 |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
                 |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
@@ -36,6 +38,7 @@ Endpoint | Paramaters | Description
             |-{affiliateCode: CODE, numberUses: N}
             ...
         |-clientToken3
+            |-{firstName: FIRST, lastName: LAST, email: EMAIL, password: PASSWORDHASH}
             |-transactions
                 |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
                 |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
@@ -47,6 +50,7 @@ Endpoint | Paramaters | Description
             ...
         ...
         |-clientTokenN
+            |-{firstName: FIRST, lastName: LAST, email: EMAIL, password: PASSWORDHASH}
             |-transactions
                 |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
                 |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}

@@ -1,9 +1,9 @@
 const axios = require('axios')
 const MongoClient = require('mongodb').MongoClient
 
-const port = 3001
+const port = 3000
 
-const url = "mongodb://localhost:27017";
+const url = process.env.mongoUrl;
 const dbName = "afili8";
 const client = MongoClient(url)
 
