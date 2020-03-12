@@ -1,0 +1,37 @@
+@html.extend('base', function(model) {
+
+    @html.block('body', function(model) {
+        
+        <section class="docs">
+            <!-- <h1>Documentation</h1> -->
+
+            <p>All endpoints expect at minimum the following request body: </p>
+            <p><em>clientToken</em> the secret token unique to you.</p>
+            <p><em>affiliateCode</em> the desired referral link.</p>
+            
+            <h2>Endpoints</h2>
+            
+            <h3>Create</h3>
+            <p>Endpoint: <em>/api/create</em></p>
+            <p>Used on your site's backend to create a new referral link for each customer as they sign up.</p>
+
+            <h3>Delete</h3>
+            <p>Endpoint: <em>/api/delete</em></p>
+            <p>Used to delete a referral link</p>
+
+            <h3>Verify</h3>
+            <p>Endpoint: <em>/api/verify</em></p>
+            <p>Response: <em>true</em> or <em>false</em></p>
+            <p>Used on your site's backend to check if a referral link exists.</p>
+
+            <h3>Increment</h3>
+            <p>Endpoint: <em>/api/increment</em></p>
+            <p>Additional paramaters:</p>
+            <p><em>price</em> the purchase price of the transaction</p>
+            <p><em>commission</em> the value of the commission to pay your affiliate</p>
+            <p>Used on your site callback after payment is successful to record a completed transaction and associate it with a particular affiliate.</p>
+        </section>
+    });
+});
+
+

@@ -1,0 +1,16 @@
+@html.extend('base', function(model) {
+
+    @html.block('body', function(model) {
+        <header>
+            <h1>Spend less time marketing and more time developing</h1>
+        </header>
+    
+    
+        <section>
+            <article>a;lksdjfa</article>
+            <div><a href=""></a></div>
+        </section>
+    });
+});
+
+

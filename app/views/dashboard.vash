@@ -1,0 +1,87 @@
+@html.extend('base', function(model) {
+    
+    @html.block('body', function(model) {
+        <div class="dashBox">
+            <h1>Welcome, @model.name</h1>
+            <h1>Token: @model.token</h1>
+        </div>
+        
+        <div class="dashBox">
+            <h2>Referral links:</h2>
+            <table>
+                @model.links.forEach(function(link) { <tr>
+                    <td>@link.affiliateCode</td>
+                    <td>@link.numberUses</td>
+                </tr> })
+            </table>
+
+            <ul>
+                @model.links.forEach(function(link) {<li onclick="handleDelete(this)"><a href="#">@link.affiliateCode</a></li>})
+            </ul>
+            <form action="" onsubmit="return handleNewAffiliateForm(this)">
+                <input type="text" name="affiliateCode" placeholder="Referral link">
+                <input type="submit" value="Create">
+            </form>
+        </div>
+
+        <div class="dashBox">
+            <h2>Referral Income</h2>
+            <canvas id="referralChart"></canvas>
+        </div>
+        
+        <div class="dashBox">
+            <h2>Commissions Paid</h2>
+            <canvas id="commissionChart"></canvas>
+        </div>  
+        
+        <script src="Chart.js"></script>
+
+        <script>
+            let commissionCtx = document.getElementById("commissionChart").getContext("2d")
+            let referralCtx = document.getElementById("referralChart").getContext("2d")
+
+            let commissionChart = new Chart(commissionCtx, {
+                type: 'line',
+                data: [@model.commissionData],
+                labels: [...Array(@model.daysInMonth).keys()],
+                xAxisID: "Day of Month",
+                yAxisID: "Commissions Paid", 
+            })
+            
+            let referralChart = new Chart(referralCtx, {
+                type: 'line',
+                data: [@model.referralData],
+                labels: [...Array(@model.daysInMonth).keys()],
+                xAxisID: "Day of Month" ,
+                yAxisID: "Referral Revenue", 
+            })
+
+            function handleDelete(link) {
+                fetch("@model.url/api/delete" , {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body:  JSON.stringify({affiliateCode: link.childNodes[0].innerHTML, clientToken: "@model.token"})
+                }).then(res => {window.location.reload(true)})
+
+                return false;
+            }
+
+            function handleNewAffiliateForm(form) {
+                if(form.affiliateCode.value === "")
+                    return false;
+
+                fetch("@model.url/api/create" , {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body:  JSON.stringify({affiliateCode: form.affiliateCode.value, clientToken: "@model.token"})
+                }).then(res => {window.location.reload(true)})
+
+                return false;
+            }
+        </script>
+    })
+})
