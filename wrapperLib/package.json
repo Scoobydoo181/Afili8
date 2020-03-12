@@ -1,0 +1,14 @@
+{
+  "name": "afili8",
+  "version": "1.0.0",
+  "description": "afili8 referral program API wrapper",
+  "main": "afili8.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christopher Wilson",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}

@@ -5,7 +5,6 @@ WORKDIR /usr/afili8/
 COPY backend backend/
 COPY public public/
 COPY views views/
-COPY .env .
 COPY package.json .
 COPY server.js .
 
