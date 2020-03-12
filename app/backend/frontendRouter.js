@@ -48,7 +48,7 @@ frontendRouter.get("/dashboard", async (req, res) => {
         name: req.session.name,       //account name
         loginText: loginText(req.session),    //conditionally render "Login" or "Logout" on navbar
         token: req.session.token,     //client secret token 
-        url: "http://localhost:" + process.env.port     //current URL of server
+        url: "https://34.67.51.25:443/"     //current URL of server
     };
     res.render("dashboard", model);
 });
