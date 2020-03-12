@@ -13,25 +13,49 @@ Endpoint | Paramaters | Description
 /api/increment | clientToken, affiliateLink | Assigns a sale to the specified affiliate link
 
 ## Database structure
-afili8
-|-clients
-    |-clientToken1
-        |-{affiliateCode: CODE, numberUses: N}
-        |-{affiliateCode: CODE, numberUses: N}
-        |-{affiliateCode: CODE, numberUses: N}
-    |-clientToken2
-        |-{affiliateCode: CODE, numberUses: N}
-        |-{affiliateCode: CODE, numberUses: N}
-        |-{affiliateCode: CODE, numberUses: N}
-    |-clientToken3
-        |-{affiliateCode: CODE, numberUses: N}
-        |-{affiliateCode: CODE, numberUses: N}
-        |-{affiliateCode: CODE, numberUses: N}
-    ...
-    |-clientTokenN
-        |-{affiliateCode: CODE, numberUses: N}
-        |-{affiliateCode: CODE, numberUses: N}
-        |-{affiliateCode: CODE, numberUses: N}
+```afili8
+    |-clients
+        |-clientToken1
+            |-transactions
+                |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
+                |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
+                |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
+                ...
+            |-{affiliateCode: CODE, numberUses: N}
+            |-{affiliateCode: CODE, numberUses: N}
+            |-{affiliateCode: CODE, numberUses: N}
+            ...
+        |-clientToken2
+            |-transactions
+                |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
+                |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
+                |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
+                ...
+            |-{affiliateCode: CODE, numberUses: N}
+            |-{affiliateCode: CODE, numberUses: N}
+            |-{affiliateCode: CODE, numberUses: N}
+            ...
+        |-clientToken3
+            |-transactions
+                |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
+                |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
+                |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
+                ...
+            |-{affiliateCode: CODE, numberUses: N}
+            |-{affiliateCode: CODE, numberUses: N}
+            |-{affiliateCode: CODE, numberUses: N}
+            ...
+        ...
+        |-clientTokenN
+            |-transactions
+                |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
+                |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
+                |-{date: DATEOBJ, affiliateCode: CODE, price: PRICE, commission: COMMISSION}
+                ...
+            |-{affiliateCode: CODE, numberUses: N}
+            |-{affiliateCode: CODE, numberUses: N}
+            |-{affiliateCode: CODE, numberUses: N}
+            ...```
 
 
 
