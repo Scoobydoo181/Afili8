@@ -5,7 +5,6 @@ import session from "express-session";
 import apiRouter from './backend/apiRouter.js'
 import frontendRouter from './backend/frontendRouter.js'
 
-
 //Express config
 const app = express()
 app.set('view engine', 'vash')

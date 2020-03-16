@@ -14,7 +14,7 @@ const apiRouter = express.Router()
 apiRouter.post('/api/login', async (req, res) => {
     try {
         const db = await getDB(client, dbName)
-
+        
         let data = req.body;
         data.password = hash(data.password).toString();
         let account = await db.collection('clients').findOne(data)
