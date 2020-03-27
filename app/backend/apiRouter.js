@@ -18,7 +18,11 @@ apiRouter.post('/api/login', async (req, res) => {
         let data = req.body;
         data.password = hash(data.password).toString();
         let account = await db.collection('clients').findOne(data)
-
+        
+        if(!account) {
+            res.redirect('/login', 401)
+            return
+        }
         req.session.email = account.email
         req.session.name = account.firstName
         req.session.token = account._id.toString()

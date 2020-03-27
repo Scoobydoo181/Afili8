@@ -24,7 +24,9 @@ frontendRouter.get("/login", (req, res) => {
         req.session.token = undefined;
         res.redirect("home");
     }
-    res.render("login", { loginText: loginText(req.session) });
+    let errorText = req.statusCode === 401 ? "Error! Failed to login in" : ""
+    
+    res.render("login", { loginText: loginText(req.session), errorText: errorText || "" });
 });
 
 frontendRouter.get("/documentation", (req, res) => {

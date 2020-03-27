@@ -130,6 +130,10 @@ header h1 {
 
 }
 
+.login p.errorText {
+    color: rgb(226, 80, 80);
+}
+
 .login p {
     text-align: center;
 }

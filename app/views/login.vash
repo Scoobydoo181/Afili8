@@ -2,9 +2,11 @@
 
     @html.block('body', function(model) {
         <div class="login">
-
+            
+            <p class="errorText">@model.errorText</p>
             <h2>Login</h2>
             
+
             <form action="/api/login" method="post">
                 
                 <input type="email" name="email" placeholder="Email" required>
