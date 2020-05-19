@@ -15,7 +15,7 @@ Endpoint | Paramaters | Description
 ## NodeJS Wrapper Library
 
 ```
-const afili8 = new require('afili8')(YOUR_UNIQUE_TOKEN)
+const afili8 = require('afili8')(YOUR_UNIQUE_TOKEN)
 
 afili8.create('AFFILIATE_CODE_1')
 afili8.create('AFFILIATE_CODE_2')
